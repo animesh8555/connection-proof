@@ -1,6 +1,6 @@
 ---
 name: "connection-proof"
-description: "Diagnose whether an MCP integration is configured, authorized, exposes tools, and returns the expected result in the intended client."
+description: "Use when establishing whether an integration works in the intended agent or when a connected status conflicts with missing tools or failed results. Diagnose whether an MCP integration is configured, authorized, exposes tools, and returns the expected result in the intended client."
 ---
 
 # Connection Proof
@@ -8,6 +8,12 @@ description: "Diagnose whether an MCP integration is configured, authorized, exp
 Verify tool availability and a read-only result in the intended client.
 
 Use this for missing connector tools, contradictory connection status, or a requested delivery test. A normal successful call does not need an extra diagnostic ceremony.
+
+## When to apply this workflow
+
+Use when establishing whether an integration works in the intended agent or when a connected status conflicts with missing tools or failed results. If the host makes this skill available, use it for matching work without waiting for a tag.
+
+Before relying on the integration, report which stages passed and what remains unverified. If an expected result is missing, pause dependent work and identify the failed stage. Continue authorized work that does not depend on the unresolved result.
 
 ## Check the actual path
 
